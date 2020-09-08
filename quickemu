@@ -487,7 +487,7 @@ function vm_boot() {
   else
     ${QEMU} \
       -name ${VMNAME},process=${VMNAME} \
-      -enable-kvm -machine q35 ${GUEST_TWEAKS} \
+      -enable-kvm -machine ${machine} ${GUEST_TWEAKS} \
       ${CPU} ${SMP} \
       -m ${RAM_VM} -device virtio-balloon \
       -drive media=cdrom,index=0,file="${iso}" \
@@ -559,6 +559,7 @@ disk2="24G"
 usb_devices=()
 ram=""
 cpu_cores=""
+machine="q35"
 
 FULLSCREEN=""
 DELETE=0
