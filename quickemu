@@ -344,6 +344,10 @@ function vm_boot() {
     fi
   fi
 
+  if [ -n "${output}" ]; then
+    OUTPUT=${output}
+  fi
+
   # GL is not working with GTK currently
   if [ "${OUTPUT}" == "gtk" ]; then
     GL="es"
